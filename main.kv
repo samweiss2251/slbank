@@ -1,0 +1,338 @@
+WindowManager:
+    MainWidget:
+    AddUser:
+    AddBalance:
+    UserLookup:
+    Withdraw:
+
+
+<MainWidget>:
+    name: "main"
+    Screen:
+    Screen:
+        color:
+            rgba (1, 1, 1, 1)
+        Label:
+            text: "S&L Banking"
+            color: 0, 157, 145, 0.8
+            size_hint: .3, .1
+            pos_hint: {'center_x':.5, 'center_y': .9}
+            font_size: self.width/5
+
+        Button:
+            text: "New Account"
+            color: 0,0,0,
+            on_press: app.root.current = "AddUser"
+            size_hint: .3, .1
+            pos_hint: {'center_x':.5, 'center_y': .7}
+
+        Button:
+            text: "withdraw"
+            color: 0,0,0,
+            on_press: app.root.current = "Withdraw"
+            size_hint: .3, .1
+            pos_hint: {'center_x':.5, 'center_y': .5}
+
+
+        Button:
+            text: "Add Balance"
+            color: 0,0,0,
+            on_press:app.root.current = "AddBalance"
+            size_hint: .3, .1
+            pos_hint: {'center_x':.5, 'center_y': .3}
+
+
+        Button:
+            text: "User Lookup"
+            color: 0,0,0,
+            on_press:app.root.current = "UserLookup"
+            size_hint: .3, .1
+            pos_hint: {'center_x':.5, 'center_y': .1}
+
+
+<AddUser>:
+    name: "AddUser"
+    Screen:
+        Label:
+            text: "New Account"
+            color: 0, 157, 145, 0.8
+            size_hint: .3, .1
+            pos_hint: {'center_x':.5, 'center_y': .8}
+            font_size: self.width/5
+
+
+        GridLayout:
+            cols: 2 
+            rows: 4
+            name: "transaction_layout"
+            color: 0, 157, 145, 0.8
+            size_hint: .5, .2
+            pos_hint: {'center_x':.5, 'center_y': .5}
+            font_size: self.width/5
+
+        
+            TextInput:
+                id: fname
+                size_hint: (.2, None)
+                height: 30
+                multiline: False
+                text: 
+                hint_text: 'First Name'
+                size_hint: .3, .1
+                
+
+            TextInput:
+                id: lname
+                size_hint: (.2, None)
+                height: 30
+                multiline: False
+                text: 
+                hint_text: 'Last Name'
+                size_hint: .3, .1
+                
+
+
+            TextInput:
+                id: card_n
+                size_hint: (.2, None)
+                height: 30
+                multiline: False
+                text:
+                hint_text: 'Card Number'
+                size_hint: .3, .1
+
+
+                
+
+            TextInput:
+                id: cvv_n
+                size_hint: (.2, None)
+                height: 30
+                multiline: False
+                text: 
+                hint_text: 'cvv'
+                size_hint: .3, .1
+
+                  
+
+        
+            Button:
+                text: "Add"
+                color: 0,0,0,
+                on_press:root.new_account()
+                size_hint: .3, .1
+                
+
+            Button:
+                text: "Home"
+                color: 0,0,0,
+                on_press:app.root.current = "main"
+                size_hint: .3, .1
+                
+
+
+
+<AddBalance>:
+    name: "AddBalance"
+    Screen:
+        Label:
+            text: "Add Balance"
+            color: 0, 157, 145, 0.8
+            size_hint: .3, .1
+            pos_hint: {'center_x':.5, 'center_y': .8}
+            font_size: self.width/5
+
+
+        GridLayout:
+            cols: 2 
+            rows: 2
+            name: "transaction_layout"
+            color: 0, 157, 145, 0.8
+            size_hint: .3, .1
+            pos_hint: {'center_x':.5, 'center_y': .5}
+            font_size: self.width/5
+
+            TextInput:
+                id: account_number
+                size_hint: (.2, None)
+                height: 30
+                multiline: False
+                text: 
+                hint_text: 'Account Number'
+                size_hint: .9, .1
+                password: True
+                passwort_mask: '*'
+            
+            TextInput:
+                id: cvv
+                size_hint: (.2, None)
+                height: 30
+                multiline: False
+                text: 
+                hint_text: 'Cvv'
+                size_hint: .7, .1
+                password: True
+                passwort_mask: '*'
+                
+
+            TextInput:
+                id: amount
+                size_hint: (.2, None)
+                height: 30
+                multiline: False
+                text: 
+                hint_text: 'Amount'
+                size_hint: .6, .1
+                
+
+        Button:
+            text: "Go"
+            color: 0,0,0,
+            on_press:root.add_balance()
+            size_hint: .3, .1
+            pos_hint: {'center_x':.5, 'center_y': .4}
+
+        Button:
+            text: "Home"
+            color: 0,0,0,
+            on_press:app.root.current = "main"
+            size_hint: .3, .1
+            pos_hint: {'center_x':.5, 'center_y': .1}
+
+
+
+<Withdraw>:
+    name: "Withdraw"
+    Screen:
+        Label:
+            text: "Withdraw"
+            color: 0, 157, 145, 0.8
+            size_hint: .3, .1
+            pos_hint: {'center_x':.5, 'center_y': .8}
+            font_size: self.width/5
+
+
+        GridLayout:
+            cols: 2 
+            rows: 2
+            name: "transaction_layout"
+            color: 0, 157, 145, 0.8
+            size_hint: .4, .1
+            pos_hint: {'center_x':.5, 'center_y': .5}
+            font_size: self.width/5
+
+            TextInput:
+                id: account_number
+                size_hint: (.2, None)
+                height: 30
+                multiline: False
+                text: 
+                hint_text: 'Account Number'
+                size_hint: .9, .1
+                password: True
+                passwort_mask: '*'
+            
+            TextInput:
+                id: cvv
+                size_hint: (.2, None)
+                height: 30
+                multiline: False
+                text: 
+                hint_text: 'Cvv'
+                size_hint: .7, .1
+                password: True
+                passwort_mask: '*'
+                
+
+            TextInput:
+                id: amount
+                size_hint: (.2, None)
+                height: 30
+                multiline: False
+                text: 
+                hint_text: 'Amount'
+                size_hint: .6, .1
+                
+
+        Button:
+            text: "Go"
+            color: 0,0,0,
+            on_press:root.withdraw()
+            size_hint: .3, .1
+            pos_hint: {'center_x':.5, 'center_y': .3}
+
+        Button:
+            text: "Home"
+            color: 0,0,0,
+            on_press:app.root.current = "main"
+            size_hint: .3, .1
+            pos_hint: {'center_x':.5, 'center_y': .1}
+
+
+
+<UserLookup>:
+    name: "UserLookup"
+    Screen:
+        Label:
+            text: "User Lookup"
+            color: 0, 157, 145, 0.8
+            size_hint: .3, .1
+            pos_hint: {'center_x':.5, 'center_y': .9}
+            font_size: self.width/5
+
+        GridLayout:
+            cols: 2 
+            rows: 2
+            name: "transaction_layout"
+            color: 0, 157, 145, 0.8
+            size_hint: .4, .1
+            pos_hint: {'center_x':.5, 'center_y': .5}
+            font_size: self.width/5
+
+            TextInput:
+                id: card
+                size_hint: (.2, None)
+                height: 30
+                multiline: False
+                text: 
+                hint_text: 'Account Number'
+                size_hint: .3, .1
+                password: True
+                passwort_mask: '*'
+            
+
+            TextInput:
+                id: cvv
+                size_hint: (.2, None)
+                height: 30
+                multiline: False
+                text: 
+                hint_text: 'cvv'
+                size_hint: .3, .1
+                password: True
+                passwort_mask: '*'
+
+
+            Button:
+                text: "Search"
+                color: 0,0,0,
+                on_press: root.press()
+                size_hint: .2, .1
+                pos_hint: {'center_x':.5, 'center_y': .4}
+
+
+            Button:
+                text: "Home"
+                color: 0,0,0,
+                on_press:app.root.current = "main"
+                size_hint: .2, .1
+                pos_hint: {'center_x':.5, 'center_y': .3}
+
+
+
+        Label:
+            id: results
+            text:
+            color: 0, 157, 145, 0.8
+            size_hint: .3, .1
+            pos_hint: {'center_x':.5, 'center_y': .3}

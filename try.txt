@@ -1,0 +1,55 @@
+TextInput:
+                id: account_number
+                size_hint: (.2, None)
+                height: 30
+                multiline: False
+                text: 
+                hint_text: 'Account Number'
+                size_hint: .3, .1
+                pos_hint: {'center_x':.5, 'center_y': .5}
+
+            TextInput:
+                id: Amount
+                size_hint: (.2, None)
+                height: 30
+                multiline: False
+                text: 
+                hint_text: 'Amount'
+                size_hint: .3, .1
+                pos_hint: {'center_x':.5, 'center_y': .4}
+            Button:
+                text: "Go"
+                color: 0,0,0,
+                on_press:
+                size_hint: .3, .1
+
+
+
+
+
+
+
+
+
+print(type(bal_results))
+            print(type(with_bal_results))
+            dep = []
+            witd = []
+            for x in bal_results:
+                inn = list(bal_results)
+                add = dep.append(list(x))
+            summm = (list(map(sum, list(dep))))
+            print(sum(summm))
+
+            for x in with_bal_results:
+                inn = list(bal_results)
+                add = witd.append(list(x))
+            witttt = (list(map(sum, list(witd))))
+            print(sum(witttt))
+
+
+            #result.append(int((summm - witttt)
+
+
+            # de_re = sum(list(map(sum(list(bal_results)))))
+            # with_re = sum(list(map(sum(list(with_bal_results)))))
